@@ -9,7 +9,14 @@
 …
 10 – четное число
 */
+const numbers = 11;
 
-for (let i = 0; i <= 11; i++) {
-    
+for (let i = 0; i < numbers; i++) {
+  if (i === 0) {
+    console.log(`${i} - это ноль`);
+  } else if (i % 2 === 0) {
+    console.log(`${i} - чётное число`);
+  } else {
+    console.log(`${i} - нечётное число`);
+  }
 }

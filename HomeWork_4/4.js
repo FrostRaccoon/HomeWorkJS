@@ -12,4 +12,8 @@ xxxx
 xxxxx
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+let slide = "x";
+console.log(slide);
+for (let i = 0; i < 19; i++) {
+  console.log((slide += "xx"));
+}

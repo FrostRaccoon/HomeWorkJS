@@ -14,4 +14,43 @@
 не окажется, значит нужно будет вывести пустой массив.
 */
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
+const arr = [];
+
+for (let i = 0; i < 5; i++) {
+  arr.push(getRandomInt(0, 9));
+}
+
+console.log(arr);
+
+/*1:
+let arrSum = 0;
+
+for (let i = 0; i < arr.length; i++) {
+  arrSum += arr[i];
+}
+
+console.log(arrSum);
+
+2:
+
+const minNum = Math.min(...arr);
+
+console.log(minNum);
+*/
+//3:
+
+const newArray = [];
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] === 3) {
+    newArray.push(i);
+  }
+}
+
+console.log(`Второй массив - [${newArray}]`);
