@@ -12,8 +12,6 @@ xxxx
 xxxxx
 */
 
-let slide = "x";
-console.log(slide);
-for (let i = 0; i < 19; i++) {
+for (let i = 0, slide = ""; i < 20; i++) {
   console.log((slide += "xx"));
 }
