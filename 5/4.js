@@ -31,5 +31,17 @@ const products = [
   },
 ];
 
-// const length = Object.keys(products[3]);
-// console.log(length);
+//1
+const filteredProducts = products.filter((object) => {
+  if (`photos` in object && object.photos.length >= 1) return true;
+});
+console.log(filteredProducts);
+//2
+
+products.sort((a, b) => a.price - b.price);
+// products.sort(function (a, b) {
+//   if (a.price < b.price) return -1;
+//   if (a.price > b.price) return 1;
+//   return 0;
+// });
+console.log(products);
