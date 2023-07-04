@@ -33,7 +33,7 @@ const products = [
 
 //1
 const filteredProducts = products.filter((object) => {
-  if (`photos` in object && object.photos.length >= 1) return true;
+  return `photos` in object && object.photos.length >= 1;
 });
 console.log(filteredProducts);
 //2
