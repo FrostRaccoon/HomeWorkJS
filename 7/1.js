@@ -12,8 +12,8 @@
 */
 const desiredEls = document.querySelectorAll(`.dropdown-item`);
 
-desiredEls.forEach((newClass) => {
-  newClass.classList.add(`super-dropdown`);
+desiredEls.forEach((collectionEl) => {
+  collectionEl.classList.add(`super-dropdown`);
 });
 /*
 2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он
@@ -41,9 +41,9 @@ divEl.insertAdjacentHTML(`afterend`, `<a href="#">link</a>`);
 /*
 5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
 */
-const withIdEl = (document.getElementById(
+document.getElementById(
   `dropdownMenuButton`
-).id = `superDropdown`);
+).id = `superDropdown`;
 
 /*
 6. Добавьте атрибут data-dd со значением 3 элементу у которого существует
