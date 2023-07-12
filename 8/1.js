@@ -33,7 +33,7 @@ window.addEventListener(`load`, () => {
 Необходимо использовать делегирование.
 */
 document.addEventListener(`click`, (event) => {
-  let target = event.target;
+  const target = event.target;
 
   if (target.classList.contains(`super_element`)) {
     console.log(
@@ -45,6 +45,11 @@ document.addEventListener(`click`, (event) => {
     );
   }
 });
+
+//или так:
+//const containStr = event.target.classList.contains('super_element') ? 'присутствует' : 'отсутствует';
+//console.log(`Класс "super_element" ${containStr} в элементе "${event.target.tagName.toLowerCase()}".`);
+
 /*
 4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение:
 "Вы навели на textarea."
@@ -66,7 +71,7 @@ textareaEl.addEventListener(`mouseover`, () => {
 const ulEl = document.querySelector(`ul`);
 
 ulEl.addEventListener(`click`, (event) => {
-  let target = event.target;
+  const target = event.target;
 
   if (target.tagName === `BUTTON`) {
     console.log(target.innerText);
@@ -78,7 +83,13 @@ ulEl.addEventListener(`click`, (event) => {
 потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul?
 Ответ необходимо написать здесь же, под этим комментарием, своими словами.
 */
-// Может, т.к. в 5-ом у нас ивент конкретно на тэг `ul` направлен. А в 3-ем на любой тег на странице...
+// Может, т.к. в 5-ом у нас ивент конкретно на тэг `ul` направлен. А в 3-ем на любой тег на странице... 
+
+//Правильный ответ "Обработчики в заданиях мы вешаем на разные теги. Когда происходит событие (клик в нашем случае),
+// событие сначала погружается до элемента, на который был клик, после чего начинает всплывать, 
+// во время всплытия и срабатывают события, сначала событие срабатывает на теге куда кликнули, 
+// потом идет к родителю, срабатывает у него, потом к родителю родителя и так далее пока не дойдет до конечного window. 
+// Так как тег ul встретится раньше чем document, во время всплытия, в console.log мы увидим сначала текст из 5-го задания, потом только из 3-го."
 /*
 7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
 */
