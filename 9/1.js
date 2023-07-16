@@ -52,32 +52,20 @@ const formButtonEl = formEl.querySelector(`button`);
 
 formButtonEl.addEventListener(`click`, (event) => {
   if (!formInputEl.value) {
-    event.preventDefault();
-  }
-
-  if (!formInputEl.value) {
     formInputEl.classList.add(`error`);
-  }
-
-  if (!formSelectEl.value) {
     event.preventDefault();
   }
 
   if (!formSelectEl.value) {
-    !formSelectEl.classList.add(`error`);
+    formSelectEl.classList.add(`error`);
+    event.preventDefault();
   }
 });
 
 formEl.addEventListener(`input`, (event) => {
   if (event.target.classList.contains("form-control")) {
-    !event.target.value
-      ? event.target.classList.add("error")
-      : event.target.classList.remove("error");
+    event.target.value
+      ? event.target.classList.remove("error")
+      : event.target.classList.add("error");
   }
-});
-
-formEl.addEventListener(`input`, (event) => {
-  !event.target.value
-    ? event.target.classList.add("error")
-    : event.target.classList.remove("error");
 });
