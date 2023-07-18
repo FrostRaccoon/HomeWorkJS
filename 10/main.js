@@ -2,8 +2,6 @@
 
 const dataJson = JSON.parse(data);
 
-console.log(dataJson);
-
 /*
 <div class="app">
     
